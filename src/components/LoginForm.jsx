@@ -1,17 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { authService } from "../fbase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 const LoginForm = ({ setMode }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const modeConverToSignUp = () => {
     setMode("signup");
   };
+  const emailOnChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const passwordOnChange = (e) => {
+    setPassword(e.target.value);
+  };
+  const onLoginSubmit = async (e) => {
+    e.preventDefault();
+    if (email === "") {
+      alert("이메일을 입력해주세요");
+      return;
+    }
+    if (password === "") {
+      alert("비밀번호를 입력해주세요.");
+      return;
+    }
+    await signInWithEmailAndPassword(authService, email, password)
+      .then((data) => console.log(data))
+      .catch((err) => {
+        alert("로그인에 실패했습니다.");
+        setEmail("");
+        setPassword("");
+      });
+  };
   return (
-    <form className="flex flex-col items-center">
-      <input type="email" placeholder="이메일" className="w-[280px] mb-4 p-1" />
+    <form className="flex flex-col items-center" onSubmit={onLoginSubmit}>
+      <input
+        type="email"
+        placeholder="이메일"
+        className="w-[280px] mb-4 p-1"
+        onChange={emailOnChange}
+        value={email}
+      />
       <input
         type="password"
         placeholder="비밀번호"
         className="w-[280px] mb-4 p-1"
+        onChange={passwordOnChange}
+        value={password}
       />
       <button
         type="submit"
