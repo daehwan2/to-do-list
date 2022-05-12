@@ -3,7 +3,7 @@ import { BsPlusSquare } from "react-icons/bs";
 
 const ToDoListInputForm = () => {
   return (
-    <form className="bg-white flex items-center w-[100%] h-[45px] fixed bottom-0 max-w-[500px]">
+    <form className="bg-white flex items-center w-[100%] h-[45px] fixed bottom-0">
       <button type="button" className="p-2">
         <BsPlusSquare className="text-[24px]" />
       </button>
