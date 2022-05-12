@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LoginForm from "../components/LoginForm";
+import Logo from "../components/Logo";
 import SignUpForm from "../components/SignUpForm";
 
 const Home = () => {
@@ -7,9 +8,7 @@ const Home = () => {
   return (
     <div className="h-[100vh] flex items-center justify-center bg-[#B7C9EB] text-[#3F4756]">
       <div>
-        <h1 className="text-center text-[50px] font-bold mb-[50px]">
-          ToDoList
-        </h1>
+        <Logo large={true} />
 
         {mode === "login" ? (
           <LoginForm setMode={setMode} />
