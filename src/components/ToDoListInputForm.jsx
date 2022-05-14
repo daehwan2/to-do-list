@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { BsPlusSquare } from "react-icons/bs";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 import { dbService } from "../fbase";
 import { useSelector } from "react-redux";
 
 const ToDoListInputForm = () => {
-  const uid = useSelector((state) => state.user.uid);
+  const email = useSelector((state) => state.user.email);
   const [text, setText] = useState("");
 
   const textChange = (e) => {
@@ -14,9 +14,10 @@ const ToDoListInputForm = () => {
 
   const addListItem = async (e) => {
     e.preventDefault();
-    await addDoc(collection(dbService, uid), {
-      content: text,
+    await addDoc(collection(dbService, email), {
       check: false,
+      text,
+      createdAt: Date.now(),
     });
     setText("");
   };
