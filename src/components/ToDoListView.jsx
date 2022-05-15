@@ -12,7 +12,7 @@ const ToDoListView = () => {
   useEffect(() => {
     const q = query(collection(dbService, email), orderBy("createdAt", "desc"));
     const unsub = onSnapshot(q, (doc) => {
-      dispatch(SetContent(doc.docs.map((d) => d.data())));
+      dispatch(SetContent(doc.docs.map((d) => ({ ...d.data(), id: d.id }))));
     });
   }, []);
   return (
