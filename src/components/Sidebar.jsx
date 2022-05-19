@@ -31,7 +31,7 @@ const Sidebar = () => {
 
       <SidebarProgressBar />
 
-      <footer className="flex justify-around items-center">
+      <footer className="flex justify-around items-center mb-4">
         <button
           type="button"
           className="p-2 bg-[#97BBFF] text-white rounded-lg"
@@ -45,8 +45,16 @@ const Sidebar = () => {
           <strong>로그아웃</strong>
         </button>
       </footer>
+
+      <p className="text-center">
+        MadeBy{" "}
+        <a
+          href="https://sulfuric-wisteria-94a.notion.site/e2b01d78959049fe9efcd6bd04ca7191"
+          className="font-bold text-[#1D324C] transition duration-200 ease-in-out hover:text-[blue] active:text-[blue]">
+          daehwan2
+        </a>
+      </p>
     </div>
-    // active 시 translate-x-0,
   );
 };
 
