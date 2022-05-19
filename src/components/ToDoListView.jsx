@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { dbService } from "../fbase";
 import { SetContent } from "../_actions/content_action";
+import Overlay from "./Overlay";
+import Sidebar from "./Sidebar";
 import ToDoListContent from "./ToDoListContent";
 import ToDoListHeader from "./ToDoListHeader";
 import ToDoListInputForm from "./ToDoListInputForm";
@@ -20,6 +22,8 @@ const ToDoListView = () => {
       <ToDoListHeader />
       <ToDoListContent />
       <ToDoListInputForm />
+      <Overlay />
+      <Sidebar />
     </div>
   );
 };
