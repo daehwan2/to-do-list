@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux/es/hooks/useSelector";
+import SidebarProgressBar from "./SidebarProgressBar";
 const Sidebar = () => {
   const isClicked = useSelector((state) => state.sidebar.isClicked);
   const email = useSelector((state) => state.user.email);
@@ -10,14 +11,7 @@ const Sidebar = () => {
       }`}>
       <strong className="text-center block mb-10">{email} 님</strong>
 
-      <div className="flex flex-col justify-center items-center mb-10">
-        <h2>일정 진행률</h2>
-        <div className="w-[180px] h-[180px] bg-[#D9D9D9] rounded-full flex justify-center items-center">
-          <div className="w-[150px] h-[150px] bg-[white] rounded-full flex justify-center items-center">
-            <strong>20%</strong>
-          </div>
-        </div>
-      </div>
+      <SidebarProgressBar />
 
       <footer className="flex justify-around items-center">
         <button
