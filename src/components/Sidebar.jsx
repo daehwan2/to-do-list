@@ -24,7 +24,7 @@ const Sidebar = () => {
   };
   return (
     <div
-      className={`w-[240px] p-5 fixed top-0 right-0 z-40 h-[100vh] bg-white transition-all duration-200 ease-in-out flex flex-col ${
+      className={`w-[280px] p-5 fixed top-0 right-0 z-40 h-[100vh] bg-white transition-all duration-200 ease-in-out flex flex-col ${
         isClicked ? "translate-x-0" : "translate-x-[100%]"
       }`}>
       <strong className="text-center block mb-10">{email} 님</strong>
