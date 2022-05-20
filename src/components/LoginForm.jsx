@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { authService } from "../fbase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 const LoginForm = ({ setMode }) => {
+  const provider = new GoogleAuthProvider();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const modeConverToSignUp = () => {
@@ -33,6 +35,9 @@ const LoginForm = ({ setMode }) => {
         setPassword("");
       });
   };
+  const onGoogleLogin = () => {
+    signInWithRedirect(authService, provider);
+  };
   return (
     <form className="flex flex-col items-center" onSubmit={onLoginSubmit}>
       <input
@@ -57,7 +62,8 @@ const LoginForm = ({ setMode }) => {
 
       <button
         type="button"
-        className="flex justify-center items-center border-black border-[1px] rounded-[4px] p-3 mb-2 drop-shadow-lg	bg-white transition duration-200 ease-in-out hover:opacity-80 active:opacity-80">
+        className="flex justify-center items-center border-black border-[1px] rounded-[4px] p-3 mb-2 drop-shadow-lg	bg-white transition duration-200 ease-in-out hover:opacity-80 active:opacity-80"
+        onClick={onGoogleLogin}>
         <FcGoogle className="text-[50px]" />
       </button>
 
