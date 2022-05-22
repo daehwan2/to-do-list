@@ -3,6 +3,7 @@ import { deleteObject, ref } from "firebase/storage";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { dbService, storageService } from "../fbase";
+import { GoSmiley } from "react-icons/go";
 
 const ToDoListContent = () => {
   const contentList = useSelector((state) => state.content);
@@ -23,26 +24,41 @@ const ToDoListContent = () => {
       {Object.keys(contentList)
         .map((i) => contentList[i])
         .map((item, i) => (
-          <li key={i} className="bg-white mb-2 p-1 rounded-[4px]">
+          <li
+            key={i}
+            className={`mb-2 p-1 rounded-[4px] relative ${
+              item.check ? "bg-[rgba(255,255,255,0.6)]" : "bg-white"
+            }`}>
             {item.image !== "" ? (
               <img
                 src={item.image}
                 alt=""
-                className="w-[100%] h-[250px] object-contain"
+                className={`w-[100%] h-[250px] object-contain ${
+                  item.check ? "opacity-60" : ""
+                }`}
               />
             ) : (
               <></>
             )}
 
-            <div className="flex items-center justify-start ">
+            <div className="flex items-center justify-start">
               <input
                 type="checkbox"
                 className="mr-1 shrink-0"
                 name=""
                 id=""
-                onChange={(e) => onCheck(e, contentList[i].id)}
-                checked={contentList[i].check}
+                onChange={(e) => onCheck(e, item.id)}
+                checked={item.check}
               />
+
+              {item.check ? (
+                <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-[40px] p-1 border-[red] border-2 rounded-lg flex items-center justify-center">
+                  <GoSmiley className="text-[red] text-[30px] mr-1" />
+                  <strong className="text-[red]">Completed!</strong>
+                </div>
+              ) : (
+                <></>
+              )}
 
               <div className="grow">{item.text}</div>
               <button
