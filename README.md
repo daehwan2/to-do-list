@@ -1,4 +1,4 @@
-# to-do-list
+# 📖 to-do-list
 
 - React, Redux, Firebase, Tailwind css 를 활용한 to-do-list 웹앱
 
@@ -29,3 +29,7 @@
 ## 디자인
 
 https://www.figma.com/file/7KcnpLE2SJlJJpeqWxcx1o/to-do-list?node-id=0%3A1
+
+## 결과물 url
+
+https://daehwan2.github.io/to-do-list/
