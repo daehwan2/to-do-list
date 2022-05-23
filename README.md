@@ -2,6 +2,10 @@
 
 - React, Redux, Firebase, Tailwind css 를 활용한 to-do-list 웹앱
 
+## 결과물
+
+https://daehwan2.github.io/to-do-list/
+
 | 로그인                                                                                                          | 회원가입                                                                                                        | 기본UI                                                                                                          | sidebar                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | ![image](https://user-images.githubusercontent.com/53414542/169700161-55b3fbf1-24fd-454f-b8b6-245d9051e46b.png) | ![image](https://user-images.githubusercontent.com/53414542/169700166-a2ba5449-33fa-4d5d-987f-d55083b44eec.png) | ![image](https://user-images.githubusercontent.com/53414542/169700176-ba0a2471-cf70-4ef5-bedf-c208a25be292.png) | ![image](https://user-images.githubusercontent.com/53414542/169700179-49e7b259-fb16-4a88-b54e-fa5fd10d45be.png) |
@@ -29,7 +33,3 @@
 ## 디자인
 
 https://www.figma.com/file/7KcnpLE2SJlJJpeqWxcx1o/to-do-list?node-id=0%3A1
-
-## 결과물 url
-
-https://daehwan2.github.io/to-do-list/
