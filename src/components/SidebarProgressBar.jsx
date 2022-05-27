@@ -22,7 +22,7 @@ const SidebarProgressBar = () => {
       }
     });
     console.log("성공:", successCount);
-    setPercent(((successCount / length) * 100).toFixed(2));
+    setPercent((length && (successCount / length) * 100).toFixed(2));
     console.log(percent);
   };
 
